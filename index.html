@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Szkoła językowa Opole – Metropolitan Language Professionals (projekt poglądowy)</title>
+<meta name="description" content="Projekt poglądowy nowej strony głównej szkoły językowej Metropolitan Language Professionals w Opolu. Kursy angielskiego, hiszpańskiego, francuskiego i innych języków dla dzieci, dorosłych i firm.">
+<link rel="icon" href="assets/favicon-64.png" type="image/png">
+<link rel="preload" href="assets/inter.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Inter;src:url(assets/inter.woff2) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:Fraunces;src:url(assets/fraunces.woff2) format("woff2");font-weight:600;font-display:swap}
+:root{--navy:#203f8f;--navy-d:#14285c;--ink:#1d2433;--muted:#5a6475;--red:#c94545;--red-d:#a83636;--bg:#f4f6fb;--line:#e1e6f0;--r:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:400 17px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--navy)}
+h1,h2,h3{line-height:1.2;margin:0 0 .5em;color:var(--navy-d)}
+h1,h2{font-family:Fraunces,Georgia,"Times New Roman",serif;font-weight:600;letter-spacing:-.01em}
+h1{font-size:clamp(2rem,4.6vw,3.25rem)}
+h2{font-size:clamp(1.6rem,3vw,2.3rem)}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0 0 1em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:.5em;padding:.85em 1.35em;border-radius:999px;font-weight:600;text-decoration:none;font-size:1rem;line-height:1.2;border:2px solid transparent;transition:background .15s,color .15s}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-d)}
+.btn-line{border-color:var(--navy);color:var(--navy);background:#fff}.btn-line:hover{background:var(--navy);color:#fff}
+.btn svg{width:18px;height:18px;flex:none}
+.skip{position:absolute;left:-999px}.skip:focus{left:10px;top:10px;background:#fff;padding:8px;z-index:99}
+/* header */
+.hdr{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.logo img{width:118px;height:66px}
+.nav{display:flex;gap:26px;font-size:.95rem;font-weight:500}
+.nav a{text-decoration:none;color:var(--ink)}.nav a:hover{color:var(--navy)}
+.hdr .btn{padding:.6em 1.1em}
+.lang{font-size:.85rem;color:var(--muted);text-decoration:none;margin-right:6px}
+/* hero */
+.hero{background:linear-gradient(180deg,var(--bg),#fff);padding:56px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.eyebrow{display:inline-block;font-size:.85rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);margin-bottom:14px}
+.lead{font-size:1.15rem;color:var(--muted);max-width:36em}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 30px}
+.trust{display:flex;flex-wrap:wrap;gap:10px 26px;font-size:.9rem;color:var(--muted);padding:0;margin:0;list-style:none}
+.trust li{display:flex;align-items:center;gap:8px}
+.stars{color:#f2a900;letter-spacing:1px;font-size:1rem}
+.hero-img{position:relative}
+.hero-img img{border-radius:22px;box-shadow:0 20px 50px rgba(20,40,92,.18);aspect-ratio:1/1;object-fit:cover;width:100%}
+.hero-img figcaption{position:absolute;left:16px;bottom:16px;background:#fff;border-radius:12px;padding:10px 14px;font-size:.85rem;box-shadow:0 6px 20px rgba(0,0,0,.12);line-height:1.35}
+.hero-img figcaption b{display:block;color:var(--navy-d)}
+/* sections */
+section{padding:72px 0}
+.sec-head{max-width:720px;margin-bottom:36px}
+.sec-head p{color:var(--muted)}
+.grid{display:grid;gap:20px}
+.offers{grid-template-columns:repeat(3,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 12px 30px rgba(20,40,92,.10);transform:translateY(-2px)}
+.card .tag{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-weight:800;font-size:.9rem;color:#fff;background:var(--navy);margin-bottom:16px}
+.card p{color:var(--muted);font-size:.97rem;flex:1}
+.card a.more{font-weight:600;text-decoration:none;margin-top:6px}
+.card a.more::after{content:" →"}
+.card.alt{background:var(--bg)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 14px;padding:0;list-style:none}
+.chips a,.chips span{display:inline-block;font-size:.88rem;padding:.35em .8em;border-radius:999px;background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--ink)}
+/* why */
+.why{background:var(--bg)}
+.why .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.why-img img{border-radius:var(--r);aspect-ratio:4/5;object-fit:cover;width:100%}
+.badges{display:flex;gap:16px;margin-top:18px;align-items:center}
+.badges img{width:84px;height:auto}
+.badges small{color:var(--muted);font-size:.82rem;line-height:1.4}
+.feat{grid-template-columns:repeat(2,1fr);gap:26px 32px;margin-top:8px}
+.feat div{padding-left:52px;position:relative}
+.feat div::before{content:"";position:absolute;left:0;top:2px;width:36px;height:36px;border-radius:10px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23203f8f' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/20px no-repeat;border:1px solid var(--line)}
+.feat h3{margin-bottom:.25em}
+.feat p{color:var(--muted);font-size:.96rem;margin:0}
+.clients{margin-top:34px;font-size:.92rem;color:var(--muted)}
+.clients b{color:var(--ink)}
+/* reviews */
+.rev .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:center}
+.score{display:flex;align-items:center;gap:18px}
+.score .big{font-family:Fraunces,Georgia,serif;font-size:2.2rem;color:var(--navy-d);font-weight:600}
+.score .stars{font-size:1.5rem}
+.half{background:linear-gradient(90deg,#f2a900 50%,#d5dbe6 50%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.placeholder{border:2px dashed #b9c3d6;border-radius:var(--r);padding:34px;text-align:center;color:var(--muted);background:repeating-linear-gradient(45deg,#fafbfd,#fafbfd 12px,#f3f5f9 12px,#f3f5f9 24px)}
+.placeholder b{display:block;color:var(--ink);margin-bottom:6px}
+/* translations */
+.tl{background:var(--navy-d);color:#dfe6f5;padding:44px 0}
+.tl .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.tl h2{color:#fff;font-size:1.6rem;margin-bottom:.3em}
+.tl p{margin:0;max-width:44em}
+.tl .btn-line{background:transparent;border-color:#fff;color:#fff}.tl .btn-line:hover{background:#fff;color:var(--navy-d)}
+/* faq */
+.faq .wrap{max-width:860px}
+details{border-bottom:1px solid var(--line);padding:4px 0}
+summary{cursor:pointer;list-style:none;padding:18px 40px 18px 0;font-weight:600;font-size:1.05rem;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:6px;top:12px;font-size:1.6rem;font-weight:400;color:var(--navy)}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);margin:0 0 18px}
+/* contact */
+.contact{background:var(--bg)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.cbox{background:#fff;border-radius:var(--r);padding:30px;border:1px solid var(--line)}
+.cbox dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:12px 18px}
+.cbox dt{font-weight:600;color:var(--navy-d)}
+.cbox dd{margin:0}
+.todo{display:inline-block;background:#fff4d6;color:#7a5600;border-radius:6px;padding:0 .4em;font-size:.92em}
+form{display:grid;gap:12px}
+label{font-size:.9rem;font-weight:600}
+input,textarea{width:100%;font:inherit;padding:.7em .9em;border:1px solid #cdd5e3;border-radius:10px;background:#fff}
+textarea{min-height:110px;resize:vertical}
+.form-note{font-size:.82rem;color:var(--muted)}
+/* footer */
+footer{background:#101d40;color:#b8c3dc;padding:44px 0 90px;font-size:.92rem}
+footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+footer a{color:#dfe6f5;text-decoration:none}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.demo-label{position:fixed;left:12px;bottom:12px;z-index:30;background:rgba(16,29,64,.82);color:#fff;font-size:12px;padding:5px 10px;border-radius:999px;letter-spacing:.02em}
+/* responsive */
+@media (max-width:980px){
+ .nav{display:none}
+ .hero .wrap,.why .wrap,.rev .wrap,.contact .wrap{grid-template-columns:1fr}
+ .hero{padding:32px 0 48px}
+ .hero-img{max-width:520px}
+ .offers{grid-template-columns:repeat(2,1fr)}
+ .why-img{max-width:420px}
+}
+@media (max-width:640px){
+ body{font-size:16px}
+ .hdr .wrap{height:64px}
+ .logo img{width:97px;height:54px}
+ .hdr .btn span{display:none}
+ .hdr .btn{padding:.6em .75em}
+ .lang{display:none}
+ section{padding:52px 0}
+ .offers,.feat{grid-template-columns:1fr}
+ .cta .btn{flex:1 1 100%;justify-content:center}
+ .cbox{padding:22px}
+ .cbox dl{grid-template-columns:1fr;gap:2px}
+ .cbox dd{margin-bottom:10px}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":["EducationalOrganization","LocalBusiness"],"name":"Metropolitan Language Professionals","url":"https://mlp.opole.pl/","email":"info@mlp.opole.pl","telephone":["+48605250009","+48665080009"],"address":{"@type":"PostalAddress","streetAddress":"ul. Ozimska 63A","postalCode":"45-368","addressLocality":"Opole","addressCountry":"PL"},"sameAs":["https://www.facebook.com/Metropolitan-Language-Professionals-372765722748711","https://www.instagram.com/metropolitan_language_opole/"]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Przejdź do treści</a>
+<header class="hdr">
+ <div class="wrap">
+  <a class="logo" href="#" aria-label="Metropolitan Language Professionals – strona główna"><img src="assets/logo-360.webp" width="118" height="66" alt="Metropolitan Language Professionals – logo"></a>
+  <nav class="nav" aria-label="Menu główne">
+   <a href="#kursy">Kursy</a><a href="#dla-firm">Dla firm</a><a href="#tlumaczenia">Tłumaczenia</a><a href="#dlaczego">O szkole</a><a href="#faq">Pytania</a><a href="#kontakt">Kontakt</a>
+  </nav>
+  <div><a class="lang" href="https://mlp.opole.pl/en/home/">EN</a><a class="lang" href="https://mlp.opole.pl/de/startseite/">DE</a>
+  <a class="btn btn-red" href="tel:+48605250009" aria-label="Zadzwoń: 605 250 009"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1z"/></svg><span>605 250 009</span></a></div>
+ </div>
+</header>
+
+<main id="main">
+<section class="hero">
+ <div class="wrap">
+  <div>
+   <span class="eyebrow">Szkoła językowa w Opolu · ul. Ozimska 63A</span>
+   <h1>Kursy językowe w Opolu dla dzieci, dorosłych i firm</h1>
+   <p class="lead">Angielski, niemiecki, hiszpański, francuski, włoski i polski dla obcokrajowców – od 5. roku życia po seniorów. Zajęcia indywidualne lub w małej grupie, w naszej szkole, online albo z dojazdem lektora.</p>
+   <div class="cta">
+    <a class="btn btn-red" href="#kontakt">Zapisz się na kurs</a>
+    <a class="btn btn-line" href="tel:+48605250009">Zadzwoń: 605 250 009</a>
+   </div>
+   <ul class="trust">
+    <li><span class="stars" aria-hidden="true">★</span> Ocena „Doskonała” w Google · 92 opinie</li>
+    <li>Laureat Orły Kształcenia 2019</li>
+    <li>Szkolenia dla Parlamentu Europejskiego od 2017 r.</li>
+   </ul>
+  </div>
+  <figure class="hero-img" style="margin:0">
+   <img src="assets/budynek-560.webp" srcset="assets/budynek-360.webp 360w, assets/budynek-560.webp 560w, assets/budynek-700.webp 700w" sizes="(max-width:980px) min(520px, 90vw), 440px" width="560" height="560" alt="Budynek szkoły językowej Metropolitan Language Professionals przy ul. Ozimskiej 63A w Opolu" fetchpriority="high">
+   <figcaption><b>Zapraszamy do szkoły</b>ul. Ozimska 63A, parter i II piętro</figcaption>
+  </figure>
+ </div>
+</section>
+
+<section id="kursy">
+ <div class="wrap">
+  <div class="sec-head">
+   <h2>Wybierz kurs</h2>
+   <p>Uczymy na każdym poziomie zaawansowania – od A1 do C2. Termin, częstotliwość i formę zajęć ustalamy razem z Tobą.</p>
+  </div>
+  <div class="grid offers">
+   <article class="card">
+    <div class="tag" aria-hidden="true">EN</div>
+    <h3>Angielski dla dzieci</h3>
+    <p>Zajęcia już od 5. roku życia, dopasowane do wieku i poziomu: kursy regularne, pomoc przy pracach domowych i przygotowanie do egzaminu ósmoklasisty.</p>
+    <a class="more" href="https://mlp.opole.pl/kursy-korepetycje-jezykowe/angielski/">Angielski dla dzieci</a>
+   </article>
+   <article class="card">
+    <div class="tag" aria-hidden="true">EN</div>
+    <h3>Angielski dla dorosłych</h3>
+    <p>Kursy ogólne i konwersacyjne, angielski biznesowy i branżowy (m.in. Business, Legal, Medical English) oraz przygotowanie do certyfikatów Cambridge FCE, CAE i CPE.</p>
+    <a class="more" href="https://mlp.opole.pl/kursy-korepetycje-jezykowe/angielski/">Angielski dla dorosłych</a>
+   </article>
+   <article class="card">
+    <div class="tag" aria-hidden="true">ES</div>
+    <h3>Hiszpański</h3>
+    <p>Poziomy A1–C1, małe grupy, doświadczeni lektorzy i native speakerzy. Przygotowanie do egzaminu DELE. Stacjonarnie lub online.</p>
+    <a class="more" href="https://mlp.opole.pl/kursy-korepetycje-jezykowe/hiszpanski/">Kurs hiszpańskiego</a>
+   </article>
+   <article class="card">
+    <div class="tag" aria-hidden="true">FR</div>
+    <h3>Francuski</h3>
+    <p>Poziomy A1–C1, kameralne grupy i praktyczne podejście od pierwszych zajęć. Przygotowanie do egzaminów DELF i DALF. Stacjonarnie lub online.</p>
+    <a class="more" href="https://mlp.opole.pl/kursy-korepetycje-jezykowe/francuski/">Kurs francuskiego</a>
+   </article>
+   <article class="card" id="dla-firm">
+    <div class="tag" aria-hidden="true" style="background:var(--red)">B2B</div>
+    <h3>Szkolenia językowe dla firm</h3>
+    <p>Program dopasowany do branży i poziomu uczestników, audyty językowe, terminy ustalane indywidualnie – w Opolu, województwie i całej Polsce.</p>
+    <a class="more" href="https://mlp.opole.pl/o-firmie/">Oferta dla firm</a>
+   </article>
+   <article class="card alt">
+    <h3>Inne języki i egzaminy</h3>
+    <ul class="chips">
+     <li><a href="https://mlp.opole.pl/kursy-korepetycje-jezykowe/niemiecki/">Niemiecki</a></li>
+     <li><a href="https://mlp.opole.pl/kursy-korepetycje-jezykowe/wloski/">Włoski</a></li>
+     <li><a href="https://mlp.opole.pl/kursy-korepetycje-jezykowe/polski-dla-obcokrajowcow/">Polski dla obcokrajowców</a></li>
+     <li><span>Rosyjski</span></li>
+    </ul>
+    <p>Korepetycje, matura (podstawowa i rozszerzona), egzamin ósmoklasisty, IELTS, TOEFL, Goethe-Zertifikat i inne egzaminy międzynarodowe.</p>
+    <a class="more" href="https://mlp.opole.pl/kursy-korepetycje-jezykowe/">Wszystkie kursy</a>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="why" id="dlaczego">
+ <div class="wrap">
+  <div class="why-img">
+   <img src="assets/zajecia-590.webp" srcset="assets/zajecia-400.webp 400w, assets/zajecia-590.webp 590w" sizes="(max-width:980px) 90vw, 400px" width="590" height="394" alt="Zajęcia językowe w szkole Metropolitan Language Professionals" loading="lazy" style="aspect-ratio:auto">
+   <div class="badges">
+    <img src="assets/orly-120.webp" width="120" height="136" alt="Laureat konkursu Orły Kształcenia 2019" loading="lazy">
+    <img src="assets/oferteo-120.webp" width="120" height="120" alt="Odznaka Oferteo Najlepsi 2023" loading="lazy">
+    <small>Laureat Orły Kształcenia 2019<br>Oferteo „Najlepsi 2023”</small>
+   </div>
+  </div>
+  <div>
+   <div class="sec-head" style="margin-bottom:26px">
+    <h2>Dlaczego MLP?</h2>
+    <p>Metropolitan Language Professionals to szkoła z wieloletnim doświadczeniem, która uczy zarówno klientów prywatnych, jak i firmy oraz instytucje.</p>
+   </div>
+   <div class="grid feat">
+    <div><h3>Dla każdego wieku</h3><p>Od dzieci w wieku 5 lat, przez młodzież i dorosłych, po seniorów.</p></div>
+    <div><h3>Indywidualnie lub w małej grupie</h3><p>Kurs szyty na miarę – a jeśli uczysz się z kimś bliskim, stworzymy dla Was grupę.</p></div>
+    <div><h3>Bez płacenia z góry za rok</h3><p>Częstotliwość, czas trwania i termin zajęć wybierasz Ty, a cenę dopasowujemy indywidualnie.</p></div>
+    <div><h3>Odwołane zajęcia nie przepadają</h3><p>Zajęcia odwołane wcześniej możesz odrobić w dogodnym terminie.</p></div>
+    <div><h3>Nowoczesne sale lub dojazd</h3><p>Sale z tablicami interaktywnymi w Opolu – albo lektor dojedzie do domu lub firmy.</p></div>
+    <div><h3>Przygotowanie do egzaminów</h3><p>Matura, egzamin ósmoklasisty, Cambridge, IELTS, DELE, DELF, Goethe-Zertifikat.</p></div>
+   </div>
+   <p class="clients">Zaufały nam m.in. <b>Bank ING</b>, <b>Grupa Żywiec S.A.</b> i <b>Urząd Miasta Opola</b>. Od października 2017 r. prowadzimy szkolenia językowe dla <b>Parlamentu Europejskiego</b>.</p>
+  </div>
+ </div>
+</section>
+
+<section class="rev" id="opinie">
+ <div class="wrap">
+  <div>
+   <h2>Opinie w Google</h2>
+   <div class="score"><span class="big">Doskonała</span><span class="stars" aria-hidden="true">★★★★<span class="half">★</span></span></div>
+   <p style="color:var(--muted);margin-top:8px">Na podstawie 92 opinii opublikowanych w Google.</p>
+  </div>
+  <div class="placeholder" role="note">
+   <b>Tu widżet opinii Google (Trustindex)</b>
+   W gotowej stronie wyświetlą się aktualne opinie z Google – widżet ładowany dopiero po przewinięciu, żeby nie spowalniał strony.
+  </div>
+ </div>
+</section>
+
+<section class="tl" id="tlumaczenia">
+ <div class="wrap">
+  <div>
+   <h2>Biuro tłumaczeń MLP</h2>
+   <p>Tłumaczenia zwykłe i przysięgłe z zakresu prawa, biznesu, techniki, medycyny i administracji – obsługujemy wszystkie języki świata. Prześlij plik, a bezpłatnie wycenimy tekst.</p>
+  </div>
+  <a class="btn btn-line" href="https://mlp.opole.pl/tlumaczenia/">Zobacz tłumaczenia</a>
+ </div>
+</section>
+
+<section class="faq" id="faq">
+ <div class="wrap">
+  <div class="sec-head"><h2>Najczęstsze pytania</h2></div>
+  <details><summary>Od jakiego wieku można zapisać dziecko?</summary><p>Zajęcia prowadzimy już dla dzieci od 5. roku życia, a także dla nastolatków, dorosłych i seniorów. Starszych uczniów przygotowujemy m.in. do egzaminu ósmoklasisty i matury.</p></details>
+  <details><summary>Czy trzeba płacić za cały rok z góry?</summary><p>Nie. Częstotliwość, czas trwania i okres nauki wybierasz sam, a cenę kursu dopasowujemy indywidualnie. Zajęcia odwołane wcześniej nie przepadają – można je odrobić w dogodnym terminie.</p></details>
+  <details><summary>Gdzie odbywają się zajęcia?</summary><p>W naszej szkole przy ul. Ozimskiej 63A w Opolu (parter i II piętro), w salach z tablicami interaktywnymi. Wybrane kursy prowadzimy także online, a lektor może dojechać do domu lub firmy.</p></details>
+  <details><summary>Do jakich egzaminów przygotowujecie?</summary><p>Do matury (podstawowej i rozszerzonej), egzaminu ósmoklasisty oraz egzaminów międzynarodowych, m.in. Cambridge (FCE, CAE, CPE), IELTS, TOEFL, DELE, DELF i DALF oraz Goethe-Zertifikat A1–C2.</p></details>
+  <details><summary>Czy prowadzicie szkolenia dla firm?</summary><p>Tak. Prowadzimy szkolenia językowe dla firm i instytucji w Opolu, w województwie opolskim i w całej Polsce – z programem dopasowanym do branży i poziomu uczestników. Wykonujemy też audyty językowe.</p></details>
+ </div>
+</section>
+
+<section class="contact" id="kontakt">
+ <div class="wrap">
+  <div>
+   <h2>Zapisy i kontakt</h2>
+   <p style="color:var(--muted)">Zadzwoń lub napisz – pomożemy dobrać kurs, poziom i termin zajęć.</p>
+   <div class="cbox">
+    <dl>
+     <dt>Adres</dt><dd>ul. Ozimska 63A (parter, II piętro)<br>45-368 Opole<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Metropolitan+Language+Professionals+Ozimska+63A+Opole" rel="noopener">Pokaż na mapie Google</a></dd>
+     <dt>Telefon</dt><dd><a href="tel:+48605250009">605 250 009</a>, <a href="tel:+48665080009">665 080 009</a></dd>
+     <dt>E-mail</dt><dd><a href="mailto:info@mlp.opole.pl">info@mlp.opole.pl</a></dd>
+     <dt>Godziny</dt><dd><span class="todo">do uzupełnienia – godziny otwarcia szkoły</span></dd>
+    </dl>
+   </div>
+  </div>
+  <div class="cbox">
+   <h3>Napisz do nas</h3>
+   <form action="#" onsubmit="return false">
+    <label for="f-n">Imię i nazwisko</label><input id="f-n" name="name" autocomplete="name">
+    <label for="f-e">Adres e-mail</label><input id="f-e" name="email" type="email" autocomplete="email">
+    <label for="f-t">Numer telefonu</label><input id="f-t" name="tel" type="tel" autocomplete="tel">
+    <label for="f-m">Treść wiadomości</label><textarea id="f-m" name="msg"></textarea>
+    <button class="btn btn-red" type="submit" style="justify-content:center;cursor:not-allowed">Wyślij wiadomość</button>
+    <p class="form-note">W projekcie poglądowym formularz jest nieaktywny. W gotowej stronie zostanie podłączony obecny formularz kontaktowy.</p>
+   </form>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div><img src="assets/logo-white-300.webp" width="150" height="84" alt="Metropolitan Language Professionals" loading="lazy"><p style="margin-top:14px">ul. Ozimska 63A, 45-368 Opole<br>tel. 605 250 009, 665 080 009<br>info@mlp.opole.pl</p></div>
+  <ul><li><a href="#kursy">Kursy językowe</a></li><li><a href="#dla-firm">Szkolenia dla firm</a></li><li><a href="#tlumaczenia">Tłumaczenia</a></li><li><a href="#kontakt">Kontakt</a></li></ul>
+  <ul><li><a href="https://www.facebook.com/Metropolitan-Language-Professionals-372765722748711" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/metropolitan_language_opole/" rel="noopener">Instagram</a></li><li><a href="https://www.linkedin.com/mwlite/company/language-professionals-a-%C5%82-" rel="noopener">LinkedIn</a></li></ul>
+  <p style="width:100%;margin:10px 0 0;font-size:.82rem">© Metropolitan Language Professionals · Projekt poglądowy nowej strony głównej (nie jest to opublikowana wersja strony).</p>
+ </div>
+</footer>
+<div class="demo-label">Projekt poglądowy</div>
+</body>
+</html>
